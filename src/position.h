@@ -346,6 +346,7 @@ private:
   // variant-specific
   const Variant* var;
   bool tsumeMode;
+  bool xiangqiProtocol;
   bool chess960;
   int pieceCountInHand[COLOR_NB][PIECE_TYPE_NB];
   int virtualPieces;
