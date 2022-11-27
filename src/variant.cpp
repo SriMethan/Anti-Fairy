@@ -258,6 +258,7 @@ namespace {
         v->whiteFlag = (Rank4BB | Rank5BB) & (FileDBB | FileEBB);
         v->blackFlag = (Rank4BB | Rank5BB) & (FileDBB | FileEBB);
         v->flagMove = false;
+        v->nnueAlias = "kingofthehill";
         return v;
     }
     // Racing Kings
@@ -271,6 +272,7 @@ namespace {
         v->flagMove = true;
         v->castling = false;
         v->checking = false;
+        v->nnueAlias = "racingkings";
         return v;
     }
     // Knightmate
@@ -320,6 +322,7 @@ namespace {
         Variant* v = giveaway_variant()->init();
         v->startFen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w - - 0 1";
         v->castling = false;
+        v->nnueAlias = "antichess";
         return v;
     }
     // Suicide chess
@@ -382,6 +385,7 @@ namespace {
         v->enPassantRegion = Rank3BB | Rank6BB; // exclude en passant on second rank
         v->extinctionValue = -VALUE_MATE;
         v->extinctionPieceTypes = {ALL_PIECES};
+        v->nnueAlias = "horde";
         return v;
     }
     // Atomic chess without checks (ICC rules)
@@ -403,6 +407,7 @@ namespace {
     Variant* atomic_variant() {
         Variant* v = nocheckatomic_variant()->init();
         v->extinctionPseudoRoyal = true;
+        v->nnueAlias = "atomic";
         return v;
     }
     // Three-check chess
@@ -412,6 +417,7 @@ namespace {
         Variant* v = chess_variant_base()->init();
         v->startFen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 3+3 0 1";
         v->checkCounting = true;
+        v->nnueAlias = "3check";
         return v;
     }
     // Five-check chess
@@ -431,6 +437,7 @@ namespace {
         v->startFen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR[] w KQkq - 0 1";
         v->pieceDrops = true;
         v->capturesToHand = true;
+        v->nnueAlias = "crazyhouse";
         return v;
     }
     // Loop chess
